@@ -3,12 +3,15 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"nilus-challenge-backend/internal/infrastructure"
 )
 
 func main() {
+	infrastructure.StartHTTPServer()
+
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "¡Servicio de clima en funcionamiento!")
-	})
+		http.NotFound(w, r)
+	})	
 
 	fmt.Println("Servicio de clima escuchando en el puerto 8083...")
 	if err := http.ListenAndServe(":8083", nil); err != nil {

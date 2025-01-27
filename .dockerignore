@@ -4,6 +4,13 @@ bin/
 
 *.log
 *.tmp
+*.swp
+*.swo
+.DS_Store
+
+tmp/
+.air.toml
+.env
 
 *.test
 
@@ -14,3 +21,4 @@ bin/
 .vscode/
 .idea/
 *.swp
+
