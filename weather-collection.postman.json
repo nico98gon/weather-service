@@ -1,0 +1,84 @@
+{
+	"info": {
+		"_postman_id": "f34aa2e2-744f-4f23-ac25-f6f052bf8529",
+		"name": "weather-collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41573800",
+		"_collection_link": "https://nilus-challenge-14.postman.co/workspace/fff9d9db-c41e-4884-8783-e8f70921217d/collection/41573800-f34aa2e2-744f-4f23-ac25-f6f052bf8529?action=share&source=collection_link&creator=41573800"
+	},
+	"item": [
+		{
+			"name": "Localities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{weather-service-url}}/localities?city=sao%20paulo",
+					"host": [
+						"{{weather-service-url}}"
+					],
+					"path": [
+						"localities"
+					],
+					"query": [
+						{
+							"key": "city",
+							"value": "sao%20paulo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forecast",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{weather-service-url}}/city-forecast?city_id=4750",
+					"host": [
+						"{{weather-service-url}}"
+					],
+					"path": [
+						"city-forecast"
+					],
+					"query": [
+						{
+							"key": "city_id",
+							"value": "4750"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Wave",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{weather-service-url}}/wave-forecast?city_id=241&day=0",
+					"host": [
+						"{{weather-service-url}}"
+					],
+					"path": [
+						"wave-forecast"
+					],
+					"query": [
+						{
+							"key": "city_id",
+							"value": "241"
+						},
+						{
+							"key": "day",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

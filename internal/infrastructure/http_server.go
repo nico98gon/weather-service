@@ -13,7 +13,11 @@ func StartHTTPServer() {
 
 	api := "/api/v1"
 
-	http.HandleFunc(api+"/localities", weatherHandler.HandleGetLocalities)
-	http.HandleFunc(api+"/city-forecast", weatherHandler.HandleGetCityForecast)
-	http.HandleFunc(api+"/wave-forecast", weatherHandler.HandleGetWaveForecast)
+	http.HandleFunc("GET "+api+"/localities", weatherHandler.HandleGetLocalities)
+	http.HandleFunc("GET "+api+"/city-forecast", weatherHandler.HandleGetCityForecast)
+	http.HandleFunc("GET "+api+"/wave-forecast", weatherHandler.HandleGetWaveForecast)
+
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		http.NotFound(w, r)
+	})
 }

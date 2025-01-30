@@ -11,7 +11,7 @@ type APIResponse struct {
 	Message string      `json:"message,omitempty"` // Mensaje de error o información adicional (opcional)
 }
 
-func RespondJSON(w http.ResponseWriter, statusCode int, status string, data interface{}, message string) {
+func respondJSON(w http.ResponseWriter, statusCode int, status string, data interface{}, message string) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(statusCode)
 
@@ -25,9 +25,9 @@ func RespondJSON(w http.ResponseWriter, statusCode int, status string, data inte
 }
 
 func SuccessResponse(w http.ResponseWriter, data interface{}) {
-	RespondJSON(w, http.StatusOK, "success", data, "")
+	respondJSON(w, http.StatusOK, "success", data, "")
 }
 
 func ErrorResponse(w http.ResponseWriter, statusCode int, message string) {
-	RespondJSON(w, statusCode, "error", nil, message)
+	respondJSON(w, statusCode, "error", nil, message)
 }
